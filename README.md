@@ -3,9 +3,9 @@ This script listens to your voice input and connects with Open AI language model
 The script connect to the open AI API and the Azure cognitive services speach API to convert Speech to text and text to Speech. 
 
 **Pre-requists** 
-1. You need to have a open AI account created and a API Key
+1. You need to have a open AI account created and an API Key 
 2. Need to have a Azure cognitive services account to obtain a speech service API
-3. Python installed in your local machine
+5. Python installed in your local machine
 4. following python libraries need to be installed
 
 - azure-cognitiveservices-speech
