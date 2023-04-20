@@ -4,11 +4,11 @@ This scripts in this project uses Open AI language models to create a human like
 - Iteration 1: gets user input as text and returns the response in text form. like a chat window.
 - Iteration 2: gets the user input via voice and reads back the response.
 
-The script connect to the open AI API and the Azure cognitive services speach API to convert Speech to text and text to Speech. 
+The script connect to the open AI API and the Azure cognitive services speech API to convert Speech to text and text to Speech. 
 
 **Pre-requists** 
-1. You need to have a open AI account created and an API Key 
-2. Need to have a Azure cognitive services account to obtain a speech service API
+1. You need to have an open AI account created and an API Key 
+2. Need to have an Azure cognitive services account to obtain a speech service API
 5. Python installed in your local machine
 4. following python libraries need to be installed
 
