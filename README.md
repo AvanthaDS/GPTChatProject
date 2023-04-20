@@ -1,8 +1,8 @@
 # GPT Chat Script
 This scripts in this project uses Open AI language models to create a human like conversation. 
 
-Iteration 1: gets user input as text and returns the response in text form. like a chat window.
-Iteration 2: gets the user input via voice and reads back the response.
+- Iteration 1: gets user input as text and returns the response in text form. like a chat window.
+- Iteration 2: gets the user input via voice and reads back the response.
 
 The script connect to the open AI API and the Azure cognitive services speach API to convert Speech to text and text to Speech. 
 
