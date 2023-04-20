@@ -1,0 +1,4 @@
+GPT_API_KEY=<your open api key>
+Azure_API_KEY=<your azure cognitive speech service key>
+Azure_ENDPOINT=<your azure cognitive speech service end point>
+Azure_REGION=<your azure cognitive speech service region>
