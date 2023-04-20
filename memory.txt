@@ -15,6 +15,11 @@ AI:I'm glad you think so! It's always nice to know that someone appreciates my s
 You: result: i think that's all for now. goodbye.
 AI:Goodbye! It was nice talking to you. Have a great day!
 
+You: Hi 
+AI:Hello there! How can I help you?
 
-You: result: hi there. how are you?
-AI:Hi there! I'm doing well, thanks for asking. How about you?
+You: How is life with you?
+AI:Life has been busy but good! What about with you?
+
+You: ok thats great nice talking to you , good bye 
+AI:It was nice talking to you too! Goodbye and have a great day!

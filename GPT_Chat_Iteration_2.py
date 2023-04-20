@@ -1,10 +1,12 @@
+# This iteration of the script connect to open AI, and Azure Cognitive Speech services APIs
+# User input is taken as voice input and response is shown in as an output at the same time read aloud
+
 import openai
 import azure.cognitiveservices.speech as speechsdk
 import nltk
 
 '''
 Makesure there is a text file in the same folder as this script as "Keys.txt" with the following content 
-
 GPT_API_KEY=<your open api key>
 Azure_API_KEY=<your azure cognitive speech service key>
 Azure_ENDPOINT=<your azure cognitive speech service end point>
@@ -57,7 +59,7 @@ def speakNow():
     speech_recognizer.stop_continuous_recognition()
     return result_text
 
-# function to send somethin to GPT and get a response
+# function to send something to GPT and get a response
 def getGPTresponse(my_prompt, my_max_tokens):
     maxtokens = my_max_tokens
     prompt = my_prompt
@@ -69,8 +71,9 @@ def getGPTresponse(my_prompt, my_max_tokens):
     ai_response = response.choices[0].text.strip()
     return ai_response
 
-# open and read the file,read past context and close.
-# This file will store the past converation context sumarized, so that the converation can continue in a meaningful way
+# open and read the previous conversation context.
+# This file will store the past conversation context summarized, so that the conversation can continue in a meaningful way
+
 f = open('memory.txt', 'r')
 context = f.read()
 f.close()
@@ -87,7 +90,7 @@ while True:
         voice_out=readNow(ai_response)
 
         tocken_Count = len(nltk.wordpunct_tokenize(context))
-        #when the context is more than 900 tokens the following will xumarized that and continues the converstions
+        #when the context is more than 900 tokens the following will summarized that and continues the conversations
         if tocken_Count > 900: # after 900 tokens the conversation will be summarized to 500 words.
             prompt = f"{context}\n\n You: This is a dialogue between you(AI) and I. Can you summarise it to 500 words.\n"
             ai_response = getGPTresponse(prompt, 2000)
