@@ -1,5 +1,5 @@
 # GPT Chat Script
-This script listens to your voice input and connects with Open AI language models and respond back by using Azure speech services
+This script listens to your voice input and connects with Open AI language models and respond back by using Azure speech services.
 The script connect to the open AI API and the Azure cognitive services speach API to convert Speech to text and text to Speech. 
 
 **Pre-requists** 
