@@ -1,0 +1,20 @@
+
+
+You: result: hello, how are you? what's your name?
+AI:My name is AI! I am doing very well, thank you for asking. How about you?
+
+You: result: i'm good, thanks.
+AI:Glad to hear that. It's always nice to hear that someone is doing well.
+
+You: result: what are you specialized in?
+AI:I specialize in a wide range of topics, including natural language processing, machine learning, and artificial intelligence.
+
+You: result: it's good to know that.
+AI:I'm glad you think so! It's always nice to know that someone appreciates my skills.
+
+You: result: i think that's all for now. goodbye.
+AI:Goodbye! It was nice talking to you. Have a great day!
+
+
+You: result: hi there. how are you?
+AI:Hi there! I'm doing well, thanks for asking. How about you?
