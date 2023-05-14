@@ -71,6 +71,14 @@ def getGPTresponse(my_prompt, my_max_tokens):
     ai_response = response.choices[0].text.strip()
     return ai_response
 
+def check_sentence(sentence, words):
+    for word in words:
+        if word not in sentence:
+            return False
+    return True
+
+words_to_check = ["terminate"]
+
 # open and read the previous conversation context.
 # This file will store the past conversation context summarized, so that the conversation can continue in a meaningful way
 
@@ -80,24 +88,28 @@ f.close()
 while True:
     # user_input = input("\nYou: ")
     user_input = speakNow().lower()
-    if user_input != "":
-        prompt = f"{context}\n\nYou: {user_input}\nAI:"
-        ai_response = getGPTresponse(prompt, 2000)
 
-        context = f"{prompt}{ai_response}"
-        print(f"AI: {ai_response}")
-
-        voice_out=readNow(ai_response)
-
-        tocken_Count = len(nltk.wordpunct_tokenize(context))
-        #when the context is more than 900 tokens the following will summarized that and continues the conversations
-        if tocken_Count > 900: # after 900 tokens the conversation will be summarized to 500 words.
-            prompt = f"{context}\n\n You: This is a dialogue between you(AI) and I. Can you summarise it to 500 words.\n"
+    if check_sentence(user_input,words_to_check):
+        exit()
+    else:
+        if user_input != "":
+            prompt = f"{context}\n\nYou: {user_input}\nAI:"
             ai_response = getGPTresponse(prompt, 2000)
-            context = f"{ai_response}"
-        print(f"Tocket size on conversation context:{tocken_Count}")
-        f = open('memory.txt', 'w')
-        # update content
-        f.write(context)
-        # close the file after writing
-        f.close()
+
+            context = f"{prompt}{ai_response}"
+            print(f"AI: {ai_response}")
+
+            voice_out=readNow(ai_response)
+
+            tocken_Count = len(nltk.wordpunct_tokenize(context))
+            #when the context is more than 900 tokens the following will summarized that and continues the conversations
+            if tocken_Count > 900: # after 900 tokens the conversation will be summarized to 500 words.
+                prompt = f"{context}\n\n You: This is a dialogue between you(AI) and I. Can you summarise it to 500 words.\n"
+                ai_response = getGPTresponse(prompt, 2000)
+                context = f"{ai_response}"
+            print(f"Tocket size on conversation context:{tocken_Count}")
+            f = open('memory.txt', 'w')
+            # update content
+            f.write(context)
+            # close the file after writing
+            f.close()
