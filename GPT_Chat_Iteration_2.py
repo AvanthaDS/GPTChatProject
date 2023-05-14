@@ -71,12 +71,14 @@ def getGPTresponse(my_prompt, my_max_tokens):
     ai_response = response.choices[0].text.strip()
     return ai_response
 
+#functiona to to check if the voice input has sertain words.
 def check_sentence(sentence, words):
     for word in words:
         if word not in sentence:
             return False
     return True
 
+#Specify the words with a ",". When the voice input has this word the script will terminate.
 words_to_check = ["terminate"]
 
 # open and read the previous conversation context.
@@ -89,6 +91,7 @@ while True:
     # user_input = input("\nYou: ")
     user_input = speakNow().lower()
 
+    #check the voice input has a sertain word and then terminate the code. This is used to stop the code on voice input.
     if check_sentence(user_input,words_to_check):
         exit()
     else:
